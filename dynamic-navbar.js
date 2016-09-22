@@ -91,8 +91,8 @@ $(".styleChoice").click(function(e) {
     localStorage.setItem("style", styleName);
 });
 
-(function() {
+setTimeout(function() {
     var styleName = localStorage.getItem("style") || "journal";
     console.log(styleName);
     $("link[rel='stylesheet']")[0].href = "http://strapdownjs.com/v/0.2/themes/" + styleName.toLowerCase() + ".min.css";
-})();
+}, 1000);
