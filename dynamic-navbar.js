@@ -87,5 +87,12 @@ function forLinkableParts(result, current, index, theArray) {
 
 $(".styleChoice").click(function(e) {
     var styleName = e.target.innerText.trim().toLowerCase();
-    $("link[rel='stylesheet']")[0].href = "http://strapdownjs.com/v/0.2/themes/" + styleName + ".min.css";       
+    $("link[rel='stylesheet']")[0].href = "http://strapdownjs.com/v/0.2/themes/" + styleName + ".min.css";
+    localStorage.setItem("style", styleName);
 });
+
+(function() {
+    var styleName = localStorage.getItem("style") || "journal";
+    console.log(styleName);
+    $("link[rel='stylesheet']")[0].href = "http://strapdownjs.com/v/0.2/themes/" + styleName.toLowerCase() + ".min.css";
+})();
