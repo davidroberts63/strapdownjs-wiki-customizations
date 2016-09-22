@@ -24,7 +24,7 @@ var navbarHtml=`
         </div>
     </div>
 </div>
-`;s
+`;
 
 $("#the-navbar").html(navbarHtml);
 $("#the-navbar #headline").html($("wikiName")[0].innerText);
